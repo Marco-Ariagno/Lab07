@@ -56,7 +56,7 @@ public class FXMLController {
 			return;
 		}
 
-		Nerc n = comboBoxNerc.getValue();
+		Nerc n = new Nerc(comboBoxNerc.getValue().getId(),comboBoxNerc.getValue().getValue());
 		List<PowerOutage> soluz = new ArrayList<>(model.calcolaSottoinsiemi(ore, anni, n));
 		txtResult.appendText("Tot people affected: " + model.getBestNumero() + "\n");
 		for (PowerOutage p : soluz) {
